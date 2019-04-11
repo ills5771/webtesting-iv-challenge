@@ -27,4 +27,9 @@ describe("server.js", () => {
       .post("/lakers")
       .send({});
   });
+  it("should return status code 200 for DELETE", () => {
+    return request(server)
+      .delete("/lakers/:id")
+      .send({});
+  });
 });

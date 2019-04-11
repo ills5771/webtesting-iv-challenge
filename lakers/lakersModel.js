@@ -15,7 +15,9 @@ async function insert(laker) {
 }
 
 function remove(id) {
-  return null;
+  return db("lakers")
+    .where("id", id)
+    .del();
 }
 
 function all() {

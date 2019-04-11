@@ -20,6 +20,21 @@ server.post("/lakers", async (req, res) => {
     });
   }
 });
+server.delete("/lakers/:id", async (req, res) => {
+  try {
+    const count = await Lakers.remove(req.params.id);
+    if (count > 0) {
+      res.status(200).json({ message: "The laker is deleted" });
+    } else {
+      res.status(404).json({ message: "The laker could not be found" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Error removing the laker"
+    });
+  }
+});
 
 server.get("/lakers", async (req, res) => {
   const squad = await Lakers.all();
