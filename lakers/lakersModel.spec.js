@@ -1,5 +1,7 @@
 const db = require("../data/dbConfig.js");
 const Lakers = require("./lakersModel.js");
+const request = require("supertest");
+const server = require("../api/server");
 
 describe("lakers model", () => {
   beforeEach(async () => {

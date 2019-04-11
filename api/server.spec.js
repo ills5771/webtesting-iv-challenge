@@ -22,4 +22,9 @@ describe("server.js", () => {
         console.log(error);
       });
   });
+  it("should return status code 200 for POST", () => {
+    return request(server)
+      .post("/lakers")
+      .send({});
+  });
 });
